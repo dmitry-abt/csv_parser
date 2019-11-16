@@ -15,7 +15,8 @@ def write_file(name, data):
 
     
 def compute_street(street):
-    result = street.replace(',','')
+    street.replace(',','')
+    street.strip()
     return street
     
     
