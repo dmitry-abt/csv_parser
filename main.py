@@ -15,8 +15,35 @@ def write_file(name, data):
 
     
 def compute_street(street):
+    quick_name = [
+        'ул.', 
+        'пр.', 
+        'пер.', 
+        'наб.', 
+        'ш.', 
+        'дор.', 
+        'г.', 
+        'бульв.', 
+        'пл.', 
+        'пос.'
+    ]
+    full_name = [
+        'улица', 
+        'проспект', 
+        'переулок', 
+        'набережная', 
+        'шоссе', 
+        'дорога', 
+        'город ', 
+        'бульвар', 
+        'площадь', 
+        'поселок '
+    ]
     street.replace(',','')
     street.strip()
+    for i in range(len(quick_name)):
+        if quick_name[i] in street:
+            street = street.replace(quick_name[i], full_name[i])
     return street
     
     
