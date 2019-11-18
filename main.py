@@ -2,7 +2,6 @@
 
 
 import csv
-import re
 
 
 def read_file(name):
@@ -40,7 +39,6 @@ def compute_street(street):
         'площадь'
     ]
     street = street.replace(',', '')
-    street = street.strip()
     for i in range(len(quick_name)):
         if quick_name[i] in street.lower():
             street = street.replace(quick_name[i], full_name[i])
@@ -48,7 +46,7 @@ def compute_street(street):
         if street.find(full_name[j]) == len(street) - len(full_name[j]) & street.find(full_name[j]) >= 0:
                 street = street.replace(full_name[j], '')
                 street = street + ' ' + full_name[j] 
-    re.sub('\s+', ' ', street).strip()
+    street = street.strip()
     print (street)
     return street
 
