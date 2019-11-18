@@ -44,9 +44,10 @@ def compute_street(street):
     for i in range(len(quick_name)):
         if quick_name[i] in street.lower():
             street = street.replace(quick_name[i], full_name[i])
-            if street.find(full_name[i]) < len(street) - len(full_name[i]):
-                street = street.replace(full_name[i], '')
-                street = street + ' ' + full_name[i]
+    for j in range(len(full_name)):
+        if street.find(full_name[j]) == len(street) - len(full_name[j]) & street.find(full_name[j]) >= 0:
+                street = street.replace(full_name[j], '')
+                street = street + ' ' + full_name[j] 
     re.sub('\s+', ' ', street).strip()
     print (street)
     return street
