@@ -47,6 +47,7 @@ def compute_street(street):
                 street = street.replace(full_name[j], '')
                 street = street + ' ' + full_name[j] 
     street = street.strip()
+    street = street.replace('  ', ' ')
     print (street)
     return street
 
