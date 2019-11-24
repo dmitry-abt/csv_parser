@@ -28,6 +28,7 @@ def compute_street(street):
         'дор.',
         'бульв.',
         'б-р',
+        'о.',
         'пл.'
     ]
     full_name = [
@@ -40,6 +41,7 @@ def compute_street(street):
         'дорога',
         'бульвар',        
         'бульвар',
+        'остров',
         'площадь'
     ]
     street = street.replace(',', '')
