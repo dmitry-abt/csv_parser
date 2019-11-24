@@ -23,6 +23,7 @@ def is_wrong(street):
         'гор.',
         'пос.',
         'пос ',
+        'ст.',
         'уч.'
     ]
     for i in range(len(wrong_name)):
