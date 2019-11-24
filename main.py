@@ -17,6 +17,18 @@ def write_file(name, data):
     f.writelines(data)
 
 
+def is_wrong(street):
+    wrong_name = [
+        'г.',
+        'гор.',
+        'пос.',
+        'уч.'
+    ]
+    for i in range(len(wrong_name)):
+         if wrong_name[i] in street.lower():
+            return True
+    return False
+
 def compute_street(street):
     quick_name = [
         'ул.',
@@ -57,16 +69,20 @@ address = {}
 polygon = {}
 reader = csv.reader(open('live.csv'), delimiter=':')
 for row in reader:
-    key = compute_street(row[2])
-    if key not in address:
-        address[key] = []
-    address[key].append(row[3:])
+    street = row[2]
+    if not is_wrong(street):
+        key = compute_street(street)
+        if key not in address:
+            address[key] = []
+        address[key].append(row[3:])
 reader = csv.reader(open('polygon.csv'), delimiter=':')
 for row in reader:
-    key = compute_street(row[4])
-    if key not in polygon:
-        polygon[key] = []
-    polygon[key].append(row[0:])
+    street = row[4]
+    if not is_wrong(street):
+        key = compute_street(street)
+        if key not in polygon:
+            polygon[key] = []
+        polygon[key].append(row[0:])
 
 # live.csv
 # polygon.csv
