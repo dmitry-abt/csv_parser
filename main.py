@@ -33,6 +33,7 @@ def is_wrong(street):
 def compute_street(street):
     quick_name = [
         'ул.',
+        'бул.',
         'пр.',
         'пер.',
         'наб.',
@@ -44,6 +45,7 @@ def compute_street(street):
     ]
     full_name = [
         'улица',
+        'бульвар',        
         'проспект',
         'переулок',
         'набережная',
