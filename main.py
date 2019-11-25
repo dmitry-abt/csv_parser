@@ -27,7 +27,8 @@ def is_wrong(street):
         'уч.',
         'сдт',
         'садоводство',
-        'территория'
+        'территория',
+        'участок'
     ]
     for i in range(len(wrong_name)):
          if wrong_name[i] in street.lower():
